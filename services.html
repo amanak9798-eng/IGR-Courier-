@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - IGR Courier & Cargo</title>
+    <meta name="description"
+        content="Explore our full range of logistics services including Standard, Express, Overnight, and Fragile item shipping in Varanasi.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#080C24',
+                            red: '#FA4318',
+                            dark: '#1a1a1a',
+                            light: '#f4f5f7'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans text-gray-700 antialiased bg-gray-50 flex flex-col min-h-screen">
+
+    <!-- Announcement Bar -->
+    <div class="bg-brand-red text-white text-center py-2 text-sm font-semibold tracking-wide">
+        🎉 Special Offer: Get 10% OFF on every shipment! <a href="contact.html"
+            class="underline hover:text-brand-blue ml-2">Book Now</a>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="bg-brand-blue text-white text-sm py-2 px-4 hidden md:block">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex space-x-6">
+                <a href="tel:9076716770" class="hover:text-brand-red transition"><i class="fas fa-phone-alt mr-2"></i>
+                    +91 9076716770</a>
+                <a href="mailto:gauravdude083@gmail.com" class="hover:text-brand-red transition"><i
+                        class="fas fa-envelope mr-2"></i> gauravdude083@gmail.com</a>
+                <span class="text-gray-400"><i class="fas fa-clock mr-2"></i> Mon-Sat: 08:00 - 20:00</span>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="hover:text-brand-red transition"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-brand-red transition"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-brand-red transition"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3 group">
+                    <img class="h-12 w-12 rounded-full object-cover border-2 border-brand-red group-hover:scale-105 transition"
+                        src="images/gaurav_verma_profile_TLTEK75QBH_business_profile_image.jpeg" alt="IGR Courier Logo">
+                    <div>
+                        <h1 class="text-2xl font-bold text-brand-blue leading-none">IGR</h1>
+                        <p class="text-xs font-semibold text-brand-red tracking-widest">COURIER & CARGO</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-gray-700 font-medium hover:text-brand-red transition">Home</a>
+                    <a href="about.html" class="text-gray-700 font-medium hover:text-brand-red transition">About</a>
+                    <a href="services.html" class="text-brand-red font-bold transition">Services</a>
+                    <a href="contact.html" class="text-gray-700 font-medium hover:text-brand-red transition">Contact</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="contact.html"
+                        class="bg-brand-red hover:bg-red-600 text-white font-semibold py-2.5 px-6 rounded-full shadow-lg transition transform hover:-translate-y-0.5">
+                        Get A Quote
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-brand-red focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full z-40 shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-red hover:bg-gray-50">Home</a>
+                <a href="about.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-red hover:bg-gray-50">About</a>
+                <a href="services.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-brand-red bg-gray-50">Services</a>
+                <a href="contact.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-red hover:bg-gray-50">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="bg-brand-blue py-16 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <img src="images/hero_banner.png" class="w-full h-full object-cover">
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center" data-aos="fade-up">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Our Services</h1>
+            <p class="text-xl text-gray-300 max-w-2xl mx-auto">Comprehensive logistics solutions tailored to meet your
+                personal and business needs.</p>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="py-20 bg-brand-light flex-grow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Service 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-2xl transition duration-300 group flex flex-col h-full"
+                    data-aos="fade-up" data-aos-delay="0">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="images/service_standard.png" alt="Standard Parcel"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300">
+                        </div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="bg-brand-light text-brand-red p-3 rounded-lg">
+                                <i class="fas fa-box text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-brand-blue">Standard Parcel</h3>
+                        </div>
+                        <p class="text-gray-600 mb-6 flex-grow leading-relaxed">
+                            Standard Parcel Service offers affordable and reliable delivery of packages for both
+                            individuals and businesses. Perfect for non-urgent shipments where cost-efficiency is key.
+                            We ensure your package is handled with care and delivered safely to its destination.
+                        </p>
+                        <a href="contact.html"
+                            class="inline-block w-full text-center bg-brand-blue text-white font-semibold py-3 rounded-lg hover:bg-brand-red transition">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-2xl transition duration-300 group flex flex-col h-full"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="images/service_express.png" alt="Express Parcel"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300">
+                        </div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="bg-brand-light text-brand-red p-3 rounded-lg">
+                                <i class="fas fa-shipping-fast text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-brand-blue">Express Parcel</h3>
+                        </div>
+                        <p class="text-gray-600 mb-6 flex-grow leading-relaxed">
+                            Express Parcel Service provides swift, secure, and efficient delivery of packages to local
+                            and domestic locations. Designed for time-sensitive shipments, we prioritize speed without
+                            compromising on safety.
+                        </p>
+                        <a href="contact.html"
+                            class="inline-block w-full text-center bg-brand-blue text-white font-semibold py-3 rounded-lg hover:bg-brand-red transition">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-2xl transition duration-300 group flex flex-col h-full"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="images/service_overnight.png" alt="Overnight Courier"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300">
+                        </div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="bg-brand-light text-brand-red p-3 rounded-lg">
+                                <i class="fas fa-moon text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-brand-blue">Overnight Courier</h3>
+                        </div>
+                        <p class="text-gray-600 mb-6 flex-grow leading-relaxed">
+                            Guarantees fast and reliable next-day delivery of parcels, documents, and urgent shipments.
+                            When tomorrow is the only option, trust our overnight network to get it there on time, every
+                            time.
+                        </p>
+                        <a href="contact.html"
+                            class="inline-block w-full text-center bg-brand-blue text-white font-semibold py-3 rounded-lg hover:bg-brand-red transition">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-2xl transition duration-300 group flex flex-col h-full"
+                    data-aos="fade-up" data-aos-delay="0">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="images/service_fragile.png" alt="Fragile Shipping"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300">
+                        </div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="bg-brand-light text-brand-red p-3 rounded-lg">
+                                <i class="fas fa-wine-glass-alt text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-brand-blue">Fragile Shipping</h3>
+                        </div>
+                        <p class="text-gray-600 mb-6 flex-grow leading-relaxed">
+                            Specialized handling for delicate goods such as glassware, electronics, and artworks. Our
+                            team uses extra padding and secure packaging techniques to ensure your fragile items arrive
+                            in perfect condition.
+                        </p>
+                        <a href="contact.html"
+                            class="inline-block w-full text-center bg-brand-blue text-white font-semibold py-3 rounded-lg hover:bg-brand-red transition">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-2xl transition duration-300 group flex flex-col h-full"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="images/service_fast.png" alt="Fast Courier"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300">
+                        </div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="bg-brand-light text-brand-red p-3 rounded-lg">
+                                <i class="fas fa-tachometer-alt text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-brand-blue">Fast Courier</h3>
+                        </div>
+                        <p class="text-gray-600 mb-6 flex-grow leading-relaxed">
+                            Quick, secure, and efficient transportation of parcels and documents. We optimize routes and
+                            use dedicated logistics channels to provide the fastest possible delivery times for your
+                            urgent needs.
+                        </p>
+                        <a href="contact.html"
+                            class="inline-block w-full text-center bg-brand-blue text-white font-semibold py-3 rounded-lg hover:bg-brand-red transition">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-2xl transition duration-300 group flex flex-col h-full"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="images/service_document.png" alt="Document Delivery"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300">
+                        </div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="bg-brand-light text-brand-red p-3 rounded-lg">
+                                <i class="fas fa-file-alt text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-brand-blue">Document Delivery</h3>
+                        </div>
+                        <p class="text-gray-600 mb-6 flex-grow leading-relaxed">
+                            Secure and confidential transportation of important papers and legal documents. We
+                            understand the sensitivity of your documents and ensure they are delivered directly to the
+                            recipient's hands.
+                        </p>
+                        <a href="contact.html"
+                            class="inline-block w-full text-center bg-brand-blue text-white font-semibold py-3 rounded-lg hover:bg-brand-red transition">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Rate Calculator Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h4 class="text-brand-red font-bold uppercase tracking-wider text-sm mb-2">Calculate Rate</h4>
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-blue">Get Instant Shipping Quote</h2>
+                <p class="text-gray-600 mt-4">Enter your shipment details to get an estimated cost for your delivery.
+                </p>
+            </div>
+            <div class="bg-gray-50 rounded-2xl p-8 shadow-lg border border-gray-100" data-aos="fade-up">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">From Pincode *</label>
+                        <input type="text" id="rate-from" maxlength="6" placeholder="Enter pickup pincode"
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand-red focus:ring-1 focus:ring-brand-red transition outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">To Pincode *</label>
+                        <input type="text" id="rate-to" maxlength="6" placeholder="Enter delivery pincode"
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand-red focus:ring-1 focus:ring-brand-red transition outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Weight Range *</label>
+                        <select id="rate-weight"
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand-red focus:ring-1 focus:ring-brand-red transition outline-none bg-white">
+                            <option value="0.5">Up to 500g (Documents/Small Items)</option>
+                            <option value="1">500g - 1 kg</option>
+                            <option value="2">1 kg - 2 kg</option>
+                            <option value="5">2 kg - 5 kg</option>
+                            <option value="10">5 kg - 10 kg</option>
+                            <option value="20">10 kg - 20 kg</option>
+                            <option value="30">20 kg - 30 kg</option>
+                            <option value="50">30 kg - 50 kg (Heavy Cargo)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Service Type</label>
+                        <select id="rate-service"
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand-red focus:ring-1 focus:ring-brand-red transition outline-none bg-white">
+                            <option value="standard">Standard Parcel (3-5 days)</option>
+                            <option value="express">Express Parcel (2-3 days)</option>
+                            <option value="overnight">Overnight Courier (Next Day)</option>
+                        </select>
+                    </div>
+                </div>
+                <button onclick="calculateRate()"
+                    class="w-full bg-brand-red hover:bg-red-600 text-white font-bold py-4 rounded-lg transition transform active:scale-98 shadow-lg">
+                    <i class="fas fa-calculator mr-2"></i>Calculate Shipping Rate
+                </button>
+                <div id="rate-result" class="hidden mt-6 p-6 bg-brand-blue/5 rounded-xl border border-brand-blue/20">
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-600">Estimated Cost:</span>
+                        <span id="rate-amount" class="text-3xl font-bold text-brand-blue">₹0</span>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-2">* Final rate may vary based on actual weight and dimensions
+                    </p>
+                    <a href="contact.html"
+                        class="mt-4 inline-block w-full text-center bg-brand-blue text-white font-semibold py-3 rounded-lg hover:bg-brand-red transition">
+                        Book This Shipment →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-blue text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <img class="h-10 w-10 rounded-full"
+                            src="images/gaurav_verma_profile_TLTEK75QBH_business_profile_image.jpeg" alt="Logo">
+                        <span class="text-2xl font-bold">IGR Courier</span>
+                    </div>
+                    <p class="text-gray-400 mb-6 leading-relaxed">Fast, secure, and reliable delivery services for all
+                        your logistics needs.</p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-red transition"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-red transition"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h4 class="text-xl font-bold mb-6 border-l-4 border-brand-red pl-3">Quick Links</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="index.html" class="hover:text-white transition"><i
+                                    class="fas fa-angle-right mr-2 text-brand-red"></i>Home</a></li>
+                        <li><a href="about.html" class="hover:text-white transition"><i
+                                    class="fas fa-angle-right mr-2 text-brand-red"></i>About Us</a></li>
+                        <li><a href="services.html" class="hover:text-white transition"><i
+                                    class="fas fa-angle-right mr-2 text-brand-red"></i>Our Services</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition"><i
+                                    class="fas fa-angle-right mr-2 text-brand-red"></i>Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-xl font-bold mb-6 border-l-4 border-brand-red pl-3">Services</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="services.html" class="hover:text-white transition"><i
+                                    class="fas fa-angle-right mr-2 text-brand-red"></i>Standard Parcel</a></li>
+                        <li><a href="services.html" class="hover:text-white transition"><i
+                                    class="fas fa-angle-right mr-2 text-brand-red"></i>Express Delivery</a></li>
+                        <li><a href="services.html" class="hover:text-white transition"><i
+                                    class="fas fa-angle-right mr-2 text-brand-red"></i>Overnight Courier</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-xl font-bold mb-6 border-l-4 border-brand-red pl-3">Contact Info</h4>
+                    <ul class="space-y-4 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-brand-red"></i>
+                            <span>Varanasi, Uttar Pradesh, 221005</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-brand-red"></i>
+                            <span>+91 9076716770</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-brand-red"></i>
+                            <span>gauravdude083@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
+                <p>&copy; 2026 IGR Courier & Cargo. All Rights Reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="privacy.html" class="hover:text-white">Privacy Policy</a>
+                    <a href="terms.html" class="hover:text-white">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/919076716770" target="_blank"
+        class="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-xl hover:bg-[#20b858] transition z-50 animate-bounce">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Rate Calculator
+        function calculateRate() {
+            const from = document.getElementById('rate-from').value;
+            const to = document.getElementById('rate-to').value;
+            const weight = parseFloat(document.getElementById('rate-weight').value);
+            const service = document.getElementById('rate-service').value;
+            const result = document.getElementById('rate-result');
+            const amount = document.getElementById('rate-amount');
+
+            if (from.length !== 6 || to.length !== 6) {
+                alert('Please enter valid 6-digit pincodes for both pickup and delivery.');
+                return;
+            }
+
+            // Rate calculation based on weight slabs (in production, this would call an API)
+            let baseRate = 0;
+
+            // Weight-based pricing (industry standard slabs)
+            if (weight <= 0.5) baseRate = 50;
+            else if (weight <= 1) baseRate = 70;
+            else if (weight <= 2) baseRate = 100;
+            else if (weight <= 5) baseRate = 180;
+            else if (weight <= 10) baseRate = 300;
+            else if (weight <= 20) baseRate = 500;
+            else if (weight <= 30) baseRate = 700;
+            else baseRate = 1000;
+
+            // Service type multiplier
+            let serviceMultiplier = 1;
+            if (service === 'express') {
+                serviceMultiplier = 1.5;
+            } else if (service === 'overnight') {
+                serviceMultiplier = 2;
+            }
+
+            // Check if inter-state (different first 2 digits) - add 40%
+            const isInterState = from.substring(0, 2) !== to.substring(0, 2);
+            if (isInterState) {
+                baseRate = Math.round(baseRate * 1.4);
+            }
+
+            const calculatedRate = Math.round(baseRate * serviceMultiplier);
+
+            result.classList.remove('hidden');
+            amount.textContent = '₹' + calculatedRate;
+        }
+    </script>
+</body>
+
+</html>

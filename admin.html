@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - IGR Courier & Cargo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        brand: { blue: '#080C24', red: '#FA4318', light: '#f4f5f7' }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-100 text-gray-800 font-sans min-h-screen">
+
+    <!-- Header -->
+    <header class="bg-brand-blue text-white py-4 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <img class="h-10 w-10 rounded-full"
+                    src="images/gaurav_verma_profile_TLTEK75QBH_business_profile_image.jpeg" alt="Logo">
+                <div>
+                    <span class="text-xl font-bold">IGR Courier Admin</span>
+                    <span class="text-xs text-gray-400 block">Shipment Management</span>
+                </div>
+            </div>
+            <a href="index.html" class="text-gray-300 hover:text-white transition text-sm">
+                <i class="fas fa-external-link-alt mr-1"></i>View Website
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8">
+
+        <!-- API Configuration Alert -->
+        <div id="api-alert" class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6 rounded-r-lg">
+            <div class="flex items-start">
+                <i class="fas fa-exclamation-triangle text-yellow-400 mt-1 mr-3"></i>
+                <div>
+                    <h3 class="font-bold text-yellow-800">Google Sheets API Not Configured</h3>
+                    <p class="text-yellow-700 text-sm mt-1">Enter your Google Apps Script Web App URL below to connect
+                        to your spreadsheet.</p>
+                    <div class="mt-3 flex gap-2">
+                        <input type="text" id="api-url-input" placeholder="https://script.google.com/macros/s/..."
+                            class="flex-grow px-3 py-2 border rounded text-sm">
+                        <button onclick="saveApiUrl()"
+                            class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded text-sm font-medium">
+                            Save & Connect
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-500 text-sm">Total Shipments</p>
+                        <p id="stat-total" class="text-3xl font-bold text-brand-blue">--</p>
+                    </div>
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-box text-blue-600"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-500 text-sm">In Transit</p>
+                        <p id="stat-transit" class="text-3xl font-bold text-orange-500">--</p>
+                    </div>
+                    <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-truck text-orange-600"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-500 text-sm">Delivered</p>
+                        <p id="stat-delivered" class="text-3xl font-bold text-green-500">--</p>
+                    </div>
+                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-check-circle text-green-600"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-500 text-sm">Pending Pickup</p>
+                        <p id="stat-pending" class="text-3xl font-bold text-purple-500">--</p>
+                    </div>
+                    <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-clock text-purple-600"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-wrap gap-4 mb-6">
+            <button onclick="showNewShipmentForm()"
+                class="bg-brand-red hover:bg-red-600 text-white px-6 py-3 rounded-lg font-semibold transition">
+                <i class="fas fa-plus mr-2"></i>New Shipment
+            </button>
+            <button onclick="refreshShipments()"
+                class="bg-brand-blue hover:bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold transition">
+                <i class="fas fa-sync-alt mr-2"></i>Refresh Data
+            </button>
+            <button onclick="openGoogleSheet()"
+                class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition">
+                <i class="fas fa-table mr-2"></i>Open Google Sheet
+            </button>
+        </div>
+
+        <!-- New Shipment Form (Hidden by default) -->
+        <div id="new-shipment-form" class="hidden bg-white p-6 rounded-xl shadow-sm border border-gray-100 mb-6">
+            <h3 class="text-lg font-bold text-brand-blue mb-4"><i
+                    class="fas fa-plus-circle mr-2 text-brand-red"></i>Create New Shipment</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Sender Name *</label>
+                    <input type="text" id="sender_name"
+                        class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-brand-red outline-none">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Sender Phone *</label>
+                    <input type="text" id="sender_phone"
+                        class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-brand-red outline-none">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Receiver Name *</label>
+                    <input type="text" id="receiver_name"
+                        class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-brand-red outline-none">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Receiver Pincode *</label>
+                    <input type="text" id="receiver_pincode" maxlength="6"
+                        class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-brand-red outline-none">
+                </div>
+                <div class="md:col-span-2">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Receiver Address *</label>
+                    <textarea id="receiver_address" rows="2"
+                        class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-brand-red outline-none"></textarea>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Expected Delivery</label>
+                    <input type="date" id="expected_delivery"
+                        class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-brand-red outline-none">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Notes</label>
+                    <input type="text" id="notes" placeholder="e.g., Fragile, Handle with care"
+                        class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-brand-red outline-none">
+                </div>
+            </div>
+            <div class="flex gap-3">
+                <button onclick="createShipment()"
+                    class="bg-brand-red hover:bg-red-600 text-white px-6 py-2 rounded-lg font-semibold transition">
+                    <i class="fas fa-save mr-2"></i>Create Shipment
+                </button>
+                <button onclick="hideNewShipmentForm()"
+                    class="bg-gray-200 hover:bg-gray-300 text-gray-700 px-6 py-2 rounded-lg font-semibold transition">
+                    Cancel
+                </button>
+            </div>
+        </div>
+
+        <!-- Shipments Table -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+            <div class="p-4 border-b border-gray-100 flex justify-between items-center">
+                <h3 class="font-bold text-brand-blue"><i class="fas fa-list mr-2"></i>All Shipments</h3>
+                <input type="text" id="search-input" onkeyup="filterShipments()" placeholder="Search by tracking ID..."
+                    class="px-3 py-2 border rounded-lg text-sm w-64 focus:ring-2 focus:ring-brand-red outline-none">
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase">Tracking ID
+                            </th>
+                            <th class="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase">Sender</th>
+                            <th class="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase">Receiver</th>
+                            <th class="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase">Pincode</th>
+                            <th class="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase">Status</th>
+                            <th class="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase">Location</th>
+                            <th class="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase">Updated</th>
+                            <th class="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="shipments-table-body">
+                        <tr>
+                            <td colspan="8" class="px-4 py-8 text-center text-gray-500">
+                                <i class="fas fa-info-circle mr-2"></i>Configure API above to load shipments, or
+                                <button onclick="loadDemoData()" class="text-brand-red underline">load demo
+                                    data</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Update Status Modal -->
+        <div id="update-modal" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+            <div class="bg-white rounded-xl p-6 w-full max-w-md mx-4">
+                <h3 class="text-lg font-bold text-brand-blue mb-4"><i class="fas fa-edit mr-2 text-brand-red"></i>Update
+                    Shipment Status</h3>
+                <input type="hidden" id="update-tracking-id">
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">New Status</label>
+                        <select id="update-status"
+                            class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-brand-red outline-none">
+                            <option value="Booked">Booked</option>
+                            <option value="Picked Up">Picked Up</option>
+                            <option value="In Transit">In Transit</option>
+                            <option value="Out for Delivery">Out for Delivery</option>
+                            <option value="Delivered">Delivered</option>
+                            <option value="RTO">RTO (Returned)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Current Location</label>
+                        <input type="text" id="update-location" placeholder="e.g., Varanasi Hub, Delhi Warehouse"
+                            class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-brand-red outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Notes (optional)</label>
+                        <input type="text" id="update-notes"
+                            placeholder="e.g., Attempted delivery, customer not available"
+                            class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-brand-red outline-none">
+                    </div>
+                </div>
+                <div class="flex gap-3 mt-6">
+                    <button onclick="submitStatusUpdate()"
+                        class="flex-1 bg-brand-red hover:bg-red-600 text-white py-2 rounded-lg font-semibold transition">
+                        Update Status
+                    </button>
+                    <button onclick="hideUpdateModal()"
+                        class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-700 py-2 rounded-lg font-semibold transition">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Configuration
+        let API_URL = localStorage.getItem('igr_api_url') || '';
+        let allShipments = [];
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            if (API_URL) {
+                document.getElementById('api-url-input').value = API_URL;
+                document.getElementById('api-alert').classList.add('hidden');
+                refreshShipments();
+            }
+        });
+
+        // Save API URL
+        function saveApiUrl() {
+            const url = document.getElementById('api-url-input').value.trim();
+            if (url) {
+                API_URL = url;
+                localStorage.setItem('igr_api_url', url);
+                document.getElementById('api-alert').classList.add('hidden');
+                refreshShipments();
+                alert('API connected successfully! Refreshing shipments...');
+            }
+        }
+
+        // Open Google Sheet
+        function openGoogleSheet() {
+            // Extract sheet ID from API URL or prompt for it
+            const sheetUrl = prompt('Enter your Google Sheet URL:', 'https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID/edit');
+            if (sheetUrl) {
+                window.open(sheetUrl, '_blank');
+            }
+        }
+
+        // Refresh shipments from API
+        async function refreshShipments() {
+            if (!API_URL) {
+                alert('Please configure the API URL first.');
+                return;
+            }
+
+            try {
+                const response = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ action: 'get_all' })
+                });
+                const data = await response.json();
+
+                if (data.success) {
+                    allShipments = data.data;
+                    renderShipments(allShipments);
+                    updateStats(allShipments);
+                } else {
+                    alert('Error: ' + data.error);
+                }
+            } catch (error) {
+                alert('Failed to connect to API. Please check the URL.');
+                console.error(error);
+            }
+        }
+
+        // Render shipments table
+        function renderShipments(shipments) {
+            const tbody = document.getElementById('shipments-table-body');
+
+            if (shipments.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="8" class="px-4 py-8 text-center text-gray-500">
+                            No shipments found. Click "New Shipment" to add one.
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
+
+            tbody.innerHTML = shipments.map(s => `
+                <tr class="border-t border-gray-100 hover:bg-gray-50">
+                    <td class="px-4 py-3 font-mono font-bold text-brand-blue">${s.tracking_id}</td>
+                    <td class="px-4 py-3">${s.sender_name || '-'}</td>
+                    <td class="px-4 py-3">${s.receiver_name || '-'}</td>
+                    <td class="px-4 py-3">${s.receiver_pincode || '-'}</td>
+                    <td class="px-4 py-3">
+                        <span class="px-2 py-1 text-xs rounded-full font-medium ${getStatusClass(s.status)}">
+                            ${s.status}
+                        </span>
+                    </td>
+                    <td class="px-4 py-3 text-sm text-gray-600">${s.current_location || '-'}</td>
+                    <td class="px-4 py-3 text-sm text-gray-500">${s.last_updated || '-'}</td>
+                    <td class="px-4 py-3">
+                        <button onclick="showUpdateModal('${s.tracking_id}')" class="text-brand-blue hover:text-brand-red transition">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        // Get status badge class
+        function getStatusClass(status) {
+            switch (status) {
+                case 'Delivered': return 'bg-green-100 text-green-700';
+                case 'In Transit': return 'bg-blue-100 text-blue-700';
+                case 'Out for Delivery': return 'bg-orange-100 text-orange-700';
+                case 'Picked Up': return 'bg-purple-100 text-purple-700';
+                case 'RTO': return 'bg-red-100 text-red-700';
+                default: return 'bg-gray-100 text-gray-700';
+            }
+        }
+
+        // Update statistics
+        function updateStats(shipments) {
+            document.getElementById('stat-total').textContent = shipments.length;
+            document.getElementById('stat-transit').textContent = shipments.filter(s => s.status === 'In Transit' || s.status === 'Out for Delivery').length;
+            document.getElementById('stat-delivered').textContent = shipments.filter(s => s.status === 'Delivered').length;
+            document.getElementById('stat-pending').textContent = shipments.filter(s => s.status === 'Booked').length;
+        }
+
+        // Filter shipments by search
+        function filterShipments() {
+            const query = document.getElementById('search-input').value.toLowerCase();
+            const filtered = allShipments.filter(s =>
+                s.tracking_id.toLowerCase().includes(query) ||
+                (s.receiver_name && s.receiver_name.toLowerCase().includes(query))
+            );
+            renderShipments(filtered);
+        }
+
+        // Show/Hide forms
+        function showNewShipmentForm() {
+            document.getElementById('new-shipment-form').classList.remove('hidden');
+        }
+
+        function hideNewShipmentForm() {
+            document.getElementById('new-shipment-form').classList.add('hidden');
+        }
+
+        function showUpdateModal(trackingId) {
+            document.getElementById('update-tracking-id').value = trackingId;
+            document.getElementById('update-modal').classList.remove('hidden');
+        }
+
+        function hideUpdateModal() {
+            document.getElementById('update-modal').classList.add('hidden');
+        }
+
+        // Create new shipment
+        async function createShipment() {
+            if (!API_URL) {
+                alert('Please configure the API URL first.');
+                return;
+            }
+
+            const data = {
+                action: 'create',
+                sender_name: document.getElementById('sender_name').value,
+                sender_phone: document.getElementById('sender_phone').value,
+                receiver_name: document.getElementById('receiver_name').value,
+                receiver_address: document.getElementById('receiver_address').value,
+                receiver_pincode: document.getElementById('receiver_pincode').value,
+                expected_delivery: document.getElementById('expected_delivery').value,
+                notes: document.getElementById('notes').value
+            };
+
+            try {
+                const response = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                const result = await response.json();
+
+                if (result.success) {
+                    alert('Shipment created! Tracking ID: ' + result.tracking_id);
+                    hideNewShipmentForm();
+                    refreshShipments();
+                } else {
+                    alert('Error: ' + result.error);
+                }
+            } catch (error) {
+                alert('Failed to create shipment.');
+                console.error(error);
+            }
+        }
+
+        // Submit status update
+        async function submitStatusUpdate() {
+            if (!API_URL) {
+                alert('Please configure the API URL first.');
+                return;
+            }
+
+            const data = {
+                action: 'update_status',
+                tracking_id: document.getElementById('update-tracking-id').value,
+                status: document.getElementById('update-status').value,
+                location: document.getElementById('update-location').value,
+                notes: document.getElementById('update-notes').value
+            };
+
+            try {
+                const response = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                const result = await response.json();
+
+                if (result.success) {
+                    alert('Status updated successfully!');
+                    hideUpdateModal();
+                    refreshShipments();
+                } else {
+                    alert('Error: ' + result.error);
+                }
+            } catch (error) {
+                alert('Failed to update status.');
+                console.error(error);
+            }
+        }
+
+        // Load demo data
+        function loadDemoData() {
+            allShipments = [
+                { tracking_id: 'IGR12345678', sender_name: 'Gaurav Verma', receiver_name: 'Rahul Kumar', receiver_pincode: '110001', status: 'In Transit', current_location: 'Delhi Hub', last_updated: '03/01/2026, 10:30 AM' },
+                { tracking_id: 'IGR87654321', sender_name: 'Priya Singh', receiver_name: 'Amit Sharma', receiver_pincode: '400001', status: 'Delivered', current_location: 'Mumbai', last_updated: '02/01/2026, 03:45 PM' },
+                { tracking_id: 'IGR11223344', sender_name: 'Vikash Gupta', receiver_name: 'Neha Patel', receiver_pincode: '560001', status: 'Booked', current_location: 'Varanasi Hub', last_updated: '03/01/2026, 09:00 AM' },
+                { tracking_id: 'IGR55667788', sender_name: 'Anjali Rao', receiver_name: 'Sanjay Mishra', receiver_pincode: '221005', status: 'Out for Delivery', current_location: 'Varanasi City', last_updated: '03/01/2026, 11:15 AM' }
+            ];
+            renderShipments(allShipments);
+            updateStats(allShipments);
+        }
+    </script>
+</body>
+
+</html>

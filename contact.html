@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - IGR Courier & Cargo</title>
+    <meta name="description"
+        content="Get in touch with IGR Courier & Cargo for quotes, tracking, and support. Visit our Varanasi office or call us today.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#080C24',
+                            red: '#FA4318',
+                            dark: '#1a1a1a',
+                            light: '#f4f5f7'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans text-gray-700 antialiased bg-gray-50 flex flex-col min-h-screen">
+
+    <!-- Announcement Bar -->
+    <div class="bg-brand-red text-white text-center py-2 text-sm font-semibold tracking-wide">
+        🎉 Special Offer: Get 10% OFF on every shipment! <a href="contact.html"
+            class="underline hover:text-brand-blue ml-2">Book Now</a>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="bg-brand-blue text-white text-sm py-2 px-4 hidden md:block">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex space-x-6">
+                <a href="tel:9076716770" class="hover:text-brand-red transition"><i class="fas fa-phone-alt mr-2"></i>
+                    +91 9076716770</a>
+                <a href="mailto:gauravdude083@gmail.com" class="hover:text-brand-red transition"><i
+                        class="fas fa-envelope mr-2"></i> gauravdude083@gmail.com</a>
+                <span class="text-gray-400"><i class="fas fa-clock mr-2"></i> Mon-Sat: 08:00 - 20:00</span>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="hover:text-brand-red transition"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-brand-red transition"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-brand-red transition"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3 group">
+                    <img class="h-12 w-12 rounded-full object-cover border-2 border-brand-red group-hover:scale-105 transition"
+                        src="images/gaurav_verma_profile_TLTEK75QBH_business_profile_image.jpeg" alt="IGR Courier Logo">
+                    <div>
+                        <h1 class="text-2xl font-bold text-brand-blue leading-none">IGR</h1>
+                        <p class="text-xs font-semibold text-brand-red tracking-widest">COURIER & CARGO</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-gray-700 font-medium hover:text-brand-red transition">Home</a>
+                    <a href="about.html" class="text-gray-700 font-medium hover:text-brand-red transition">About</a>
+                    <a href="services.html"
+                        class="text-gray-700 font-medium hover:text-brand-red transition">Services</a>
+                    <a href="contact.html" class="text-brand-red font-bold transition">Contact</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="#"
+                        class="bg-brand-red hover:bg-red-600 text-white font-semibold py-2.5 px-6 rounded-full shadow-lg transition transform hover:-translate-y-0.5">
+                        Get A Quote
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-brand-red focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full z-40 shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-red hover:bg-gray-50">Home</a>
+                <a href="about.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-red hover:bg-gray-50">About</a>
+                <a href="services.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-red hover:bg-gray-50">Services</a>
+                <a href="contact.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-brand-red bg-gray-50">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="bg-brand-blue py-16 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <img src="images/hero_banner.png" class="w-full h-full object-cover">
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center" data-aos="fade-up">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Contact Us</h1>
+            <p class="text-xl text-gray-300 max-w-2xl mx-auto">Have questions? We are here to help you 24/7.</p>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="py-20 bg-white flex-grow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+                <!-- Contact Form -->
+                <div class="bg-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100" data-aos="fade-right">
+                    <h2 class="text-2xl font-bold text-brand-blue mb-6">Send us a Message</h2>
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                                <input type="text"
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand-red focus:ring-1 focus:ring-brand-red transition outline-none"
+                                    placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                                <input type="tel"
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand-red focus:ring-1 focus:ring-brand-red transition outline-none"
+                                    placeholder="+91 9876543210">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                            <input type="email"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand-red focus:ring-1 focus:ring-brand-red transition outline-none"
+                                placeholder="john@example.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea rows="4"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand-red focus:ring-1 focus:ring-brand-red transition outline-none"
+                                placeholder="How can we help you?"></textarea>
+                        </div>
+                        <button type="button"
+                            class="w-full bg-brand-red hover:bg-red-600 text-white font-bold py-4 rounded-lg shadow-lg transition duration-300 transform active:scale-95">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Info & Map -->
+                <div class="flex flex-col space-y-8" data-aos="fade-left">
+                    <!-- Contact Cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div
+                            class="bg-brand-light p-6 rounded-xl flex flex-col items-center text-center hover:shadow-md transition">
+                            <div
+                                class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-red shadow-sm mb-4">
+                                <i class="fas fa-phone-alt text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-gray-900 mb-1">Phone</h3>
+                            <p class="text-gray-600 text-sm">+91 9076716770</p>
+                        </div>
+                        <div
+                            class="bg-brand-light p-6 rounded-xl flex flex-col items-center text-center hover:shadow-md transition">
+                            <div
+                                class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-red shadow-sm mb-4">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-gray-900 mb-1">Email</h3>
+                            <p class="text-gray-600 text-sm">gauravdude083@gmail.com</p>
+                        </div>
+                        <div
+                            class="bg-brand-light p-6 rounded-xl flex flex-col items-center text-center hover:shadow-md transition col-span-1 sm:col-span-2">
+                            <div
+                                class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-red shadow-sm mb-4">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-gray-900 mb-1">Office Address</h3>
+                            <p class="text-gray-600 text-sm">B 35/13 Sarainandan Khojwan, Varanasi, Uttar Pradesh 221005
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Map -->
+                    <div class="flex-grow rounded-2xl overflow-hidden shadow-lg border-4 border-white h-80 lg:h-auto">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14423.82424095817!2d82.98!3d25.3!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDE4JzAwLjAiTiA4MsKwNTgnNDguMCJF!5e0!3m2!1sen!2sin!4v1631234567890!5m2!1sen!2sin"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-blue text-white pt-16 pb-8 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <img class="h-10 w-10 rounded-full"
+                            src="images/gaurav_verma_profile_TLTEK75QBH_business_profile_image.jpeg" alt="Logo">
+                        <span class="text-2xl font-bold">IGR Courier</span>
+                    </div>
+                    <p class="text-gray-400 mb-6 leading-relaxed">Fast, secure, and reliable delivery services for all
+                        your logistics needs.</p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-red transition"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-red transition"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h4 class="text-xl font-bold mb-6 border-l-4 border-brand-red pl-3">Quick Links</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="index.html" class="hover:text-white transition"><i
+                                    class="fas fa-angle-right mr-2 text-brand-red"></i>Home</a></li>
+                        <li><a href="about.html" class="hover:text-white transition"><i
+                                    class="fas fa-angle-right mr-2 text-brand-red"></i>About Us</a></li>
+                        <li><a href="services.html" class="hover:text-white transition"><i
+                                    class="fas fa-angle-right mr-2 text-brand-red"></i>Our Services</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition"><i
+                                    class="fas fa-angle-right mr-2 text-brand-red"></i>Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-xl font-bold mb-6 border-l-4 border-brand-red pl-3">Services</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="services.html" class="hover:text-white transition"><i
+                                    class="fas fa-angle-right mr-2 text-brand-red"></i>Standard Parcel</a></li>
+                        <li><a href="services.html" class="hover:text-white transition"><i
+                                    class="fas fa-angle-right mr-2 text-brand-red"></i>Express Delivery</a></li>
+                        <li><a href="services.html" class="hover:text-white transition"><i
+                                    class="fas fa-angle-right mr-2 text-brand-red"></i>Overnight Courier</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-xl font-bold mb-6 border-l-4 border-brand-red pl-3">Contact Info</h4>
+                    <ul class="space-y-4 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-brand-red"></i>
+                            <span>Varanasi, Uttar Pradesh, 221005</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-brand-red"></i>
+                            <span>+91 9076716770</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-brand-red"></i>
+                            <span>gauravdude083@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
+                <p>&copy; 2026 IGR Courier & Cargo. All Rights Reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="privacy.html" class="hover:text-white">Privacy Policy</a>
+                    <a href="terms.html" class="hover:text-white">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/919076716770" target="_blank"
+        class="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-xl hover:bg-[#20b858] transition z-50 animate-bounce">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>

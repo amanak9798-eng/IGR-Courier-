@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IGR Courier & Cargo | Fast & Reliable Logistics in Varanasi</title>
+    <meta name="description"
+        content="IGR Courier & Cargo - Providing efficient, secure, and cost-effective delivery solutions. Specializing in parcel and cargo transportation in Varanasi and beyond.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#080C24',
+                            red: '#FA4318',
+                            dark: '#1a1a1a',
+                            light: '#f4f5f7'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-pattern {
+            background-image: linear-gradient(rgba(8, 12, 36, 0.85), rgba(8, 12, 36, 0.7)), url('images/hero_banner.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .service-card:hover .service-icon {
+            background-color: #FA4318;
+            color: white;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body class="font-sans text-gray-700 antialiased bg-gray-50 flex flex-col min-h-screen">
+
+    <!-- Announcement Bar -->
+    <div class="bg-brand-red text-white text-center py-2 text-sm font-semibold tracking-wide">
+        🎉 Special Offer: Get 10% OFF on every shipment! <a href="contact.html"
+            class="underline hover:text-brand-blue ml-2">Book Now</a>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="bg-brand-blue text-white text-sm py-2 px-4 hidden md:block">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex space-x-6">
+                <a href="tel:9076716770" class="hover:text-brand-red transition"><i class="fas fa-phone-alt mr-2"></i>
+                    +91 9076716770</a>
+                <a href="mailto:gauravdude083@gmail.com" class="hover:text-brand-red transition"><i
+                        class="fas fa-envelope mr-2"></i> gauravdude083@gmail.com</a>
+                <span class="text-gray-400"><i class="fas fa-clock mr-2"></i> Mon-Sat: 08:00 - 20:00</span>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="hover:text-brand-red transition"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-brand-red transition"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-brand-red transition"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3 group">
+                    <img class="h-12 w-12 rounded-full object-cover border-2 border-brand-red group-hover:scale-105 transition"
+                        src="images/gaurav_verma_profile_TLTEK75QBH_business_profile_image.jpeg" alt="IGR Courier Logo">
+                    <div>
+                        <h1 class="text-2xl font-bold text-brand-blue leading-none">IGR</h1>
+                        <p class="text-xs font-semibold text-brand-red tracking-widest">COURIER & CARGO</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-brand-red font-bold transition">Home</a>
+                    <a href="about.html" class="text-gray-700 font-medium hover:text-brand-red transition">About</a>
+                    <a href="services.html"
+                        class="text-gray-700 font-medium hover:text-brand-red transition">Services</a>
+                    <a href="contact.html" class="text-gray-700 font-medium hover:text-brand-red transition">Contact</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="contact.html"
+                        class="bg-brand-red hover:bg-red-600 text-white font-semibold py-2.5 px-6 rounded-full shadow-lg transition transform hover:-translate-y-0.5">
+                        Get A Quote
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-brand-red focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full z-40 shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-brand-red bg-gray-50">Home</a>
+                <a href="about.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-red hover:bg-gray-50">About</a>
+                <a href="services.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-red hover:bg-gray-50">Services</a>
+                <a href="contact.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-red hover:bg-gray-50">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-pattern h-[750px] flex items-center relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full pt-10" data-aos="fade-right">
+            <div class="max-w-2xl text-white">
+                <span
+                    class="bg-brand-red text-white text-xs font-bold px-3 py-1 rounded uppercase tracking-wider mb-4 inline-block animate-pulse">Fast
+                    & Secure Delivery</span>
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
+                    Reliable Logistics <br> <span class="text-brand-red">Across India</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed">
+                    Transform your business online effortlessly. We handle courier, parcel, and cargo transportation
+                    with timely pickups and safe handling.
+                </p>
+
+                <!-- Tracking Box -->
+                <div
+                    class="bg-white/10 backdrop-blur-md p-6 rounded-xl border border-white/20 shadow-2xl mb-8 max-w-lg">
+                    <label class="block text-gray-200 text-sm font-semibold mb-2">Track Your Shipment</label>
+                    <div class="flex flex-col sm:flex-row gap-2">
+                        <input type="text" id="tracking-input" placeholder="Enter Tracking ID (e.g., IGR12345)"
+                            class="flex-grow px-4 py-3 rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-brand-red bg-white/90 placeholder-gray-500">
+                        <button onclick="trackOrder()"
+                            class="bg-brand-red text-white font-bold py-3 px-6 rounded-md hover:bg-red-600 transition whitespace-nowrap">
+                            Track Now
+                        </button>
+                    </div>
+                    <p id="tracking-result" class="text-yellow-300 text-sm mt-2 hidden"><i
+                            class="fas fa-info-circle mr-1"></i> Please enter a valid tracking ID.</p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="services.html"
+                        class="bg-brand-blue border-2 border-brand-blue hover:bg-brand-red hover:border-brand-red text-white font-bold py-3 px-8 rounded-full text-center transition shadow-lg">
+                        Explore Services
+                    </a>
+                    <a href="contact.html"
+                        class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-brand-blue font-bold py-3 px-8 rounded-full text-center transition">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pincode Checker Section -->
+    <section class="py-12 bg-white border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-brand-blue to-brand-blue/90 rounded-2xl p-8 shadow-xl" data-aos="fade-up">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div class="text-white">
+                        <h3 class="text-2xl font-bold mb-2"><i class="fas fa-map-marker-alt mr-2"></i>Check
+                            Serviceability</h3>
+                        <p class="text-gray-300">Enter pickup and delivery pincode to check if we serve your area across
+                            India.</p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <input type="text" id="pickup-pincode" placeholder="Pickup Pincode" maxlength="6"
+                            class="flex-1 px-4 py-3 rounded-lg text-gray-800 focus:ring-2 focus:ring-brand-red outline-none">
+                        <input type="text" id="delivery-pincode" placeholder="Delivery Pincode" maxlength="6"
+                            class="flex-1 px-4 py-3 rounded-lg text-gray-800 focus:ring-2 focus:ring-brand-red outline-none">
+                        <button onclick="checkPincode()"
+                            class="bg-brand-red hover:bg-red-600 text-white font-bold px-6 py-3 rounded-lg transition whitespace-nowrap">
+                            Check <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+                <p id="pincode-result" class="hidden text-white text-sm mt-4 p-3 bg-white/10 rounded-lg"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us / Features -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h4 class="text-brand-red font-bold uppercase tracking-wider text-sm mb-2">Why Choose Us</h4>
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-blue">We Deliver Excellence</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="text-center p-6 rounded-xl hover:bg-brand-light transition duration-300" data-aos="fade-up"
+                    data-aos-delay="0">
+                    <div
+                        class="w-16 h-16 bg-blue-100 text-brand-blue rounded-full flex items-center justify-center text-2xl mx-auto mb-4">
+                        <i class="fas fa-stopwatch"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-blue mb-2">Fast Delivery</h3>
+                    <p class="text-gray-600 text-sm">We ensure your packages reach their destination on time, every
+                        time.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="text-center p-6 rounded-xl hover:bg-brand-light transition duration-300" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <div
+                        class="w-16 h-16 bg-red-100 text-brand-red rounded-full flex items-center justify-center text-2xl mx-auto mb-4">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-blue mb-2">Secure Handling</h3>
+                    <p class="text-gray-600 text-sm">Your items are handled with the utmost care and security protocols.
+                    </p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="text-center p-6 rounded-xl hover:bg-brand-light transition duration-300" data-aos="fade-up"
+                    data-aos-delay="200">
+                    <div
+                        class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-2xl mx-auto mb-4">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-blue mb-2">Pan-India Coverage</h3>
+                    <p class="text-gray-600 text-sm">Delivering across major cities in India with our reliable logistics
+                        network.</p>
+                </div>
+                <!-- Feature 4 -->
+                <div class="text-center p-6 rounded-xl hover:bg-brand-light transition duration-300" data-aos="fade-up"
+                    data-aos-delay="300">
+                    <div
+                        class="w-16 h-16 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center text-2xl mx-auto mb-4">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-blue mb-2">24/7 Support</h3>
+                    <p class="text-gray-600 text-sm">Our dedicated support team is always ready to assist you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <h4 class="text-brand-red font-bold uppercase tracking-wider text-sm mb-2">Our Services</h4>
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-blue mb-4">Quality Service You Can Trust</h2>
+                <p class="text-gray-600">We offer a range of tailored solutions designed to meet your business needs.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-2xl transition duration-300 service-card group"
+                    data-aos="fade-up" data-aos-delay="0">
+                    <div class="h-56 overflow-hidden">
+                        <img src="images/service_standard.png" alt="Standard Parcel"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-8 relative">
+                        <div
+                            class="absolute -top-8 right-8 bg-white p-3 rounded-lg shadow-lg service-icon transition duration-300 text-brand-red">
+                            <i class="fas fa-box text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-blue mb-3 group-hover:text-brand-red transition">
+                            Standard Parcel</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-3">Standard Parcel Service offers affordable and
+                            reliable delivery of packages for both individuals and businesses.</p>
+                        <a href="services.html"
+                            class="text-sm font-bold text-brand-blue border-b-2 border-brand-red pb-1">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-2xl transition duration-300 service-card group"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-56 overflow-hidden">
+                        <img src="images/service_express.png" alt="Express Parcel"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-8 relative">
+                        <div
+                            class="absolute -top-8 right-8 bg-white p-3 rounded-lg shadow-lg service-icon transition duration-300 text-brand-red">
+                            <i class="fas fa-shipping-fast text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-blue mb-3 group-hover:text-brand-red transition">Express
+                            Parcel</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-3">Express Parcel Service provides swift, secure, and
+                            efficient delivery of packages to local and domestic locations.</p>
+                        <a href="services.html"
+                            class="text-sm font-bold text-brand-blue border-b-2 border-brand-red pb-1">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-2xl transition duration-300 service-card group"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-56 overflow-hidden">
+                        <img src="images/service_overnight.png" alt="Overnight Courier"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-8 relative">
+                        <div
+                            class="absolute -top-8 right-8 bg-white p-3 rounded-lg shadow-lg service-icon transition duration-300 text-brand-red">
+                            <i class="fas fa-moon text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-blue mb-3 group-hover:text-brand-red transition">
+                            Overnight Courier</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-3">Guarantees fast and reliable next-day delivery of
+                            parcels, documents, and urgent shipments.</p>
+                        <a href="services.html"
+                            class="text-sm font-bold text-brand-blue border-b-2 border-brand-red pb-1">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="services.html"
+                    class="inline-block bg-white text-brand-blue font-bold py-3 px-8 rounded-full border-2 border-brand-blue hover:bg-brand-blue hover:text-white transition transform hover:-translate-y-1">
+                    View All Services <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-brand-blue text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+                class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-gray-700">
+                <div class="p-4" data-aos="zoom-in">
+                    <i class="fas fa-truck text-4xl text-brand-red mb-4"></i>
+                    <h3 class="text-4xl font-bold mb-2">1200+</h3>
+                    <p class="text-gray-400">Parcels Delivered</p>
+                </div>
+                <div class="p-4" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fas fa-users text-4xl text-brand-red mb-4"></i>
+                    <h3 class="text-4xl font-bold mb-2">450+</h3>
+                    <p class="text-gray-400">Happy Clients</p>
+                </div>
+                <div class="p-4" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fas fa-globe-asia text-4xl text-brand-red mb-4"></i>
+                    <h3 class="text-4xl font-bold mb-2">50+</h3>
+                    <p class="text-gray-400">Cities Covered</p>
+                </div>
+                <div class="p-4" data-aos="zoom-in" data-aos-delay="300">
+                    <i class="fas fa-thumbs-up text-4xl text-brand-red mb-4"></i>
+                    <h3 class="text-4xl font-bold mb-2">100%</h3>
+                    <p class="text-gray-400">Customer Focused</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h4 class="text-brand-red font-bold uppercase tracking-wider text-sm mb-2">Testimonials</h4>
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-blue">What Our Clients Say</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-sm border border-gray-100 relative" data-aos="fade-up"
+                    data-aos-delay="0">
+                    <div class="text-brand-red text-4xl absolute top-4 left-6 opacity-30"><i
+                            class="fas fa-quote-left"></i></div>
+                    <p class="text-gray-600 mb-6 relative z-10 italic">"Excellent service! My parcel was delivered to
+                        Delhi within 24 hours as promised. The tracking system is very accurate."</p>
+                    <div class="flex items-center">
+                        <div
+                            class="w-10 h-10 bg-brand-blue rounded-full flex items-center justify-center text-white font-bold mr-3">
+                            R</div>
+                        <div>
+                            <h5 class="font-bold text-brand-blue">Rahul Sharma</h5>
+                            <p class="text-xs text-gray-500">Business Owner</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Review 2 -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-sm border border-gray-100 relative" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <div class="text-brand-red text-4xl absolute top-4 left-6 opacity-30"><i
+                            class="fas fa-quote-left"></i></div>
+                    <p class="text-gray-600 mb-6 relative z-10 italic">"I regularly use IGR for sending documents. They
+                        are always on time and very professional. Highly recommended!"</p>
+                    <div class="flex items-center">
+                        <div
+                            class="w-10 h-10 bg-brand-red rounded-full flex items-center justify-center text-white font-bold mr-3">
+                            P</div>
+                        <div>
+                            <h5 class="font-bold text-brand-blue">Priya Verma</h5>
+                            <p class="text-xs text-gray-500">Regular Client</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Review 3 -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-sm border border-gray-100 relative" data-aos="fade-up"
+                    data-aos-delay="200">
+                    <div class="text-brand-red text-4xl absolute top-4 left-6 opacity-30"><i
+                            class="fas fa-quote-left"></i></div>
+                    <p class="text-gray-600 mb-6 relative z-10 italic">"Best courier service in Varanasi. The staff is
+                        helpful and the rates are very reasonable compared to others."</p>
+                    <div class="flex items-center">
+                        <div
+                            class="w-10 h-10 bg-brand-blue rounded-full flex items-center justify-center text-white font-bold mr-3">
+                            A</div>
+                        <div>
+                            <h5 class="font-bold text-brand-blue">Amit Singh</h5>
+                            <p class="text-xs text-gray-500">Student</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-brand-light">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h4 class="text-brand-red font-bold uppercase tracking-wider text-sm mb-2">FAQ</h4>
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-blue">Frequently Asked Questions</h2>
+            </div>
+            <div class="space-y-4" data-aos="fade-up">
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                    <button
+                        class="w-full px-6 py-4 text-left font-bold text-brand-blue flex justify-between items-center focus:outline-none"
+                        onclick="toggleFaq('faq1')">
+                        How can I track my shipment?
+                        <i class="fas fa-chevron-down text-brand-red transition-transform" id="icon-faq1"></i>
+                    </button>
+                    <div id="faq1" class="hidden px-6 pb-4 text-gray-600">
+                        You can track your shipment by entering your Tracking ID in the tracking box on our homepage.
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                    <button
+                        class="w-full px-6 py-4 text-left font-bold text-brand-blue flex justify-between items-center focus:outline-none"
+                        onclick="toggleFaq('faq2')">
+                        What areas do you cover in India?
+                        <i class="fas fa-chevron-down text-brand-red transition-transform" id="icon-faq2"></i>
+                    </button>
+                    <div id="faq2" class="hidden px-6 pb-4 text-gray-600">
+                        We offer domestic courier services across major cities in India including Delhi, Mumbai,
+                        Bangalore, Chennai, Kolkata, Hyderabad, Lucknow, and many more. Contact us to check
+                        serviceability for your specific pincode.
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                    <button
+                        class="w-full px-6 py-4 text-left font-bold text-brand-blue flex justify-between items-center focus:outline-none"
+                        onclick="toggleFaq('faq3')">
+                        What are your operating hours?
+                        <i class="fas fa-chevron-down text-brand-red transition-transform" id="icon-faq3"></i>
+                    </button>
+                    <div id="faq3" class="hidden px-6 pb-4 text-gray-600">
+                        We operate from 08:00 AM to 08:00 PM, Monday to Saturday. We are closed on Sundays.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges Section -->
+    <section class="py-12 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center" data-aos="fade-up">
+                <div class="flex flex-col items-center p-4 hover:bg-white rounded-xl transition">
+                    <div class="w-16 h-16 bg-brand-blue/10 rounded-full flex items-center justify-center mb-3">
+                        <i class="fas fa-shield-alt text-2xl text-brand-blue"></i>
+                    </div>
+                    <span class="text-sm font-semibold text-gray-700">Safe & Secure</span>
+                    <span class="text-xs text-gray-500">100% Package Safety</span>
+                </div>
+                <div class="flex flex-col items-center p-4 hover:bg-white rounded-xl transition">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-3">
+                        <i class="fas fa-map-marker-alt text-2xl text-green-600"></i>
+                    </div>
+                    <span class="text-sm font-semibold text-gray-700">Real-Time Updates</span>
+                    <span class="text-xs text-gray-500">SMS/WhatsApp Tracking</span>
+                </div>
+                <div class="flex flex-col items-center p-4 hover:bg-white rounded-xl transition">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-3">
+                        <i class="fas fa-headset text-2xl text-blue-600"></i>
+                    </div>
+                    <span class="text-sm font-semibold text-gray-700">Customer Support</span>
+                    <span class="text-xs text-gray-500">Mon-Sat 8AM-8PM</span>
+                </div>
+                <div class="flex flex-col items-center p-4 hover:bg-white rounded-xl transition">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-3">
+                        <i class="fas fa-truck text-2xl text-orange-600"></i>
+                    </div>
+                    <span class="text-sm font-semibold text-gray-700">Doorstep Pickup</span>
+                    <span class="text-xs text-gray-500">Free Home Collection</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-blue text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <img class="h-10 w-10 rounded-full"
+                            src="images/gaurav_verma_profile_TLTEK75QBH_business_profile_image.jpeg" alt="Logo">
+                        <span class="text-2xl font-bold">IGR Courier</span>
+                    </div>
+                    <p class="text-gray-400 mb-6 leading-relaxed">Fast, secure, and reliable delivery services for all
+                        your logistics needs.</p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-red transition"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-red transition"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h4 class="text-xl font-bold mb-6 border-l-4 border-brand-red pl-3">Quick Links</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="index.html" class="hover:text-white transition"><i
+                                    class="fas fa-angle-right mr-2 text-brand-red"></i>Home</a></li>
+                        <li><a href="about.html" class="hover:text-white transition"><i
+                                    class="fas fa-angle-right mr-2 text-brand-red"></i>About Us</a></li>
+                        <li><a href="services.html" class="hover:text-white transition"><i
+                                    class="fas fa-angle-right mr-2 text-brand-red"></i>Our Services</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition"><i
+                                    class="fas fa-angle-right mr-2 text-brand-red"></i>Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-xl font-bold mb-6 border-l-4 border-brand-red pl-3">Services</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="services.html" class="hover:text-white transition"><i
+                                    class="fas fa-angle-right mr-2 text-brand-red"></i>Standard Parcel</a></li>
+                        <li><a href="services.html" class="hover:text-white transition"><i
+                                    class="fas fa-angle-right mr-2 text-brand-red"></i>Express Delivery</a></li>
+                        <li><a href="services.html" class="hover:text-white transition"><i
+                                    class="fas fa-angle-right mr-2 text-brand-red"></i>Overnight Courier</a></li>
+                        <li><a href="services.html" class="hover:text-white transition"><i
+                                    class="fas fa-angle-right mr-2 text-brand-red"></i>Document Delivery</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-xl font-bold mb-6 border-l-4 border-brand-red pl-3">Contact Info</h4>
+                    <ul class="space-y-4 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-brand-red"></i>
+                            <span>Varanasi, Uttar Pradesh, 221005</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-brand-red"></i>
+                            <span>+91 9076716770</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-brand-red"></i>
+                            <span>gauravdude083@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
+                <p>&copy; 2026 IGR Courier & Cargo. All Rights Reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="privacy.html" class="hover:text-white">Privacy Policy</a>
+                    <a href="terms.html" class="hover:text-white">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/919076716770" target="_blank"
+        class="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-xl hover:bg-[#20b858] transition z-50 animate-bounce">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Init Animation
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+
+        // Mobile menu toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // FAQ Toggle
+        function toggleFaq(id) {
+            const content = document.getElementById(id);
+            const icon = document.getElementById('icon-' + id);
+            content.classList.toggle('hidden');
+            if (content.classList.contains('hidden')) {
+                icon.classList.remove('rotate-180');
+            } else {
+                icon.classList.add('rotate-180');
+            }
+        }
+
+        // Google Sheets API Configuration
+        // Replace this URL with your deployed Google Apps Script Web App URL
+        const TRACKING_API_URL = ''; // Leave empty for demo mode, or paste your Apps Script URL
+
+        // Tracking System - Connects to Google Sheets
+        async function trackOrder() {
+            const input = document.getElementById('tracking-input').value.trim().toUpperCase();
+            const result = document.getElementById('tracking-result');
+
+            if (input === "") {
+                result.classList.remove('hidden');
+                result.innerHTML = '<i class="fas fa-exclamation-circle mr-1"></i> Please enter a valid Tracking ID.';
+                result.className = "text-red-300 text-sm mt-2 font-bold";
+                return;
+            }
+
+            // Show loading state
+            result.classList.remove('hidden');
+            result.innerHTML = '<i class="fas fa-spinner fa-spin mr-1"></i> Searching for ' + input + '...';
+            result.className = "text-white text-sm mt-2";
+
+            // Check if API is configured
+            if (!TRACKING_API_URL) {
+                // Demo mode - simulate tracking response
+                setTimeout(() => {
+                    showTrackingResult(result, {
+                        success: true,
+                        demo: true,
+                        data: {
+                            tracking_id: input,
+                            status: 'In Transit',
+                            current_location: 'Varanasi Hub',
+                            last_updated: new Date().toLocaleString('en-IN'),
+                            receiver_name: 'Demo Customer',
+                            expected_delivery: 'Within 2-3 days'
+                        }
+                    });
+                }, 1500);
+                return;
+            }
+
+            // Real API call to Google Sheets
+            try {
+                const response = await fetch(TRACKING_API_URL + '?tracking_id=' + encodeURIComponent(input));
+                const data = await response.json();
+                showTrackingResult(result, data);
+            } catch (error) {
+                result.innerHTML = '<i class="fas fa-exclamation-triangle mr-1"></i> Unable to connect to tracking system. Please try again later.';
+                result.className = "text-yellow-300 text-sm mt-2 font-bold";
+            }
+        }
+
+        // Display tracking result
+        function showTrackingResult(resultElement, response) {
+            if (response.success && response.data) {
+                const d = response.data;
+                const demoTag = response.demo ? '<span class="bg-yellow-500 text-black text-xs px-2 py-0.5 rounded ml-2">DEMO MODE</span>' : '';
+                resultElement.innerHTML = `
+                    <div class="bg-white/10 p-4 rounded-lg mt-2 text-left">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="font-bold text-lg">${d.tracking_id}</span>
+                            <span class="bg-green-500 text-white text-xs px-2 py-1 rounded">${d.status}</span>
+                            ${demoTag}
+                        </div>
+                        <div class="grid grid-cols-2 gap-2 text-sm">
+                            <div><i class="fas fa-map-marker-alt mr-1 text-brand-red"></i> ${d.current_location}</div>
+                            <div><i class="fas fa-clock mr-1 text-brand-red"></i> ${d.last_updated}</div>
+                            <div><i class="fas fa-user mr-1 text-brand-red"></i> ${d.receiver_name || 'N/A'}</div>
+                            <div><i class="fas fa-calendar mr-1 text-brand-red"></i> ${d.expected_delivery || 'N/A'}</div>
+                        </div>
+                    </div>
+                `;
+                resultElement.className = "text-white text-sm mt-2";
+            } else {
+                resultElement.innerHTML = '<i class="fas fa-times-circle mr-1"></i> Tracking ID "' + (response.tracking_id || 'Unknown') + '" not found. Please check and try again.';
+                resultElement.className = "text-red-300 text-sm mt-2 font-bold";
+            }
+        }
+
+        // Pincode Serviceability Check
+        function checkPincode() {
+            const pickup = document.getElementById('pickup-pincode').value;
+            const delivery = document.getElementById('delivery-pincode').value;
+            const result = document.getElementById('pincode-result');
+
+            if (pickup.trim() === "" || delivery.trim() === "" || pickup.length !== 6 || delivery.length !== 6) {
+                result.classList.remove('hidden');
+                result.innerHTML = '<i class="fas fa-exclamation-triangle mr-2"></i>Please enter valid 6-digit pincodes for both pickup and delivery.';
+                result.className = "text-yellow-300 text-sm mt-4 p-3 bg-white/10 rounded-lg";
+                return;
+            }
+
+            result.classList.remove('hidden');
+            result.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Checking serviceability...';
+            result.className = "text-white text-sm mt-4 p-3 bg-white/10 rounded-lg";
+
+            // Simulated check - in production, this would call an API
+            setTimeout(() => {
+                // For demo, show as serviceable for major city pincodes
+                const majorCities = ['110', '400', '560', '600', '700', '500', '380', '226', '221', '302'];
+                const pickupArea = pickup.substring(0, 3);
+                const deliveryArea = delivery.substring(0, 3);
+
+                if (majorCities.includes(pickupArea) || majorCities.includes(deliveryArea) || pickup.startsWith('221')) {
+                    result.innerHTML = '<i class="fas fa-check-circle mr-2 text-green-400"></i><strong>Great news!</strong> We deliver from ' + pickup + ' to ' + delivery + '. <a href="contact.html" class="underline font-bold ml-2">Book Now →</a>';
+                    result.className = "text-white text-sm mt-4 p-3 bg-green-600/30 rounded-lg";
+                } else {
+                    result.innerHTML = '<i class="fas fa-info-circle mr-2"></i>Service may be available. Please <a href="contact.html" class="underline font-bold">contact us</a> to confirm delivery to your area.';
+                    result.className = "text-white text-sm mt-4 p-3 bg-orange-600/30 rounded-lg";
+                }
+            }, 1200);
+        }
+    </script>
+</body>
+
+</html>
